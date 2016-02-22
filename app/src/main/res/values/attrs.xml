@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TopBar">
+        <attr name="titleText" format="string"></attr>
+        <attr name="titlesize" format="dimension"></attr>
+        <attr name="titlecolor" format="color"></attr>
+        <attr name="leftTextcolor" format="color"></attr>
+        <attr name="leftBackground" format="reference|color"></attr>
+        <attr name="leftText" format="string"></attr>
+        <attr name="rightTextcolor" format="color"></attr>
+        <attr name="rightBackground" format="reference|color"></attr>
+        <attr name="rightText" format="string"></attr>
+
+    </declare-styleable>
+</resources>

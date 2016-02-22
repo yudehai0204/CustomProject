@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topBar="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jalen.customproject.MainActivity">
+    <com.jalen.customproject.CustomTopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        topBar:titleText="测试"
+        topBar:titlesize="10sp"
+        topBar:titlecolor="@android:color/holo_blue_bright"
+        topBar:leftText="Left"
+        topBar:leftTextcolor="#000fff"
+        topBar:leftBackground="@drawable/abc_ab_share_pack_mtrl_alpha"
+        topBar:rightText="Right"
+        topBar:rightTextcolor="#000fff"
+        topBar:rightBackground="@drawable/abc_ab_share_pack_mtrl_alpha"
+        >
+
+
+    </com.jalen.customproject.CustomTopBar>
+
+    <com.jalen.customproject.CustomTextView
+        android:text="Hello World!"
+        android:layout_width="100dip"
+        android:layout_height="50dip"
+        android:gravity="center"
+        />
+
+</LinearLayout>
