@@ -13,13 +13,12 @@
         android:layout_height="50dip"
         topBar:titleText="测试"
         topBar:titlesize="10sp"
-        topBar:titlecolor="@android:color/holo_blue_bright"
-        topBar:leftText="Left"
-        topBar:leftTextcolor="#000fff"
-        topBar:leftBackground="@drawable/abc_ab_share_pack_mtrl_alpha"
+        topBar:leftText="LEFT"
         topBar:rightText="Right"
-        topBar:rightTextcolor="#000fff"
-        topBar:rightBackground="@drawable/abc_ab_share_pack_mtrl_alpha"
+        topBar:titlecolor="@android:color/holo_blue_bright"
+        topBar:leftBackground="@mipmap/lucky_item_show"
+        topBar:rightBackground="@mipmap/me_feedback_advice_img"
+        topBar:topmode="1"
         >
 
 

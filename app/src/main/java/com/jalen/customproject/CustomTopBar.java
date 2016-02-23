@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -19,6 +20,11 @@ public class CustomTopBar extends ViewGroup {
     private int mLeftTextColor,mRightTextColor,mTitleTextColor;
     private float mTitleSize;
     private Drawable mLeftBackGround,mRightBackGround;
+
+    /**模式*/
+    private int mode;
+
+    private ImageView mLeftImage,mRightImage;
     private Button mLeftButton,mRightButton;
     private TextView mTitleTextView;
     private Context mContext;
@@ -32,13 +38,17 @@ public class CustomTopBar extends ViewGroup {
         super(context, attrs, defStyleAttr);
         mContext = context;
         TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.TopBar);
-        mLeftTextColor = a.getColor(R.styleable.TopBar_leftTextcolor, Color.BLACK);
-        mLeftText = a.getString(R.styleable.TopBar_leftText);
+        mode = a.getInteger(R.styleable.TopBar_topmode,0);
         mLeftBackGround = a.getDrawable(R.styleable.TopBar_leftBackground);
-
-        mRightTextColor = a.getColor(R.styleable.TopBar_rightTextcolor, Color.BLACK);
-        mRightText = a.getString(R.styleable.TopBar_rightText);
         mRightBackGround = a.getDrawable(R.styleable.TopBar_rightBackground);
+        if(mode==0) {
+            mLeftTextColor = a.getColor(R.styleable.TopBar_leftTextcolor, Color.BLACK);
+            mLeftText = a.getString(R.styleable.TopBar_leftText);
+
+            mRightTextColor = a.getColor(R.styleable.TopBar_rightTextcolor, Color.BLACK);
+            mRightText = a.getString(R.styleable.TopBar_rightText);
+
+        }
 
         mTitleText = a.getString(R.styleable.TopBar_titleText);
         mTitleSize =a.getDimension(R.styleable.TopBar_titlesize, 10f);
@@ -91,51 +101,83 @@ public class CustomTopBar extends ViewGroup {
     }
 
     private void initViews() {
-        mLeftButton = new Button(mContext);
-        mRightButton = new Button(mContext);
-        mTitleTextView = new TextView(mContext);
-        mLeftButton.setVisibility(View.VISIBLE);
-        mRightButton.setVisibility(View.VISIBLE);
-        mLeftButton.setText(mLeftText);
-        mLeftButton.setTextColor(mLeftTextColor);
-        mLeftButton.setBackground(mLeftBackGround);
         mLeftParmas = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT);
-        mLeftButton.setLayoutParams(mLeftParmas);
-        mLeftButton.setGravity(Gravity.CENTER);
-        addView(mLeftButton);
-
-        mRightButton.setText(mRightText);
-        mRightButton.setTextColor(mRightTextColor);
-        mRightButton.setBackground(mRightBackGround);
         mRightParmas = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT);
-        mRightButton.setLayoutParams(mRightParmas);
-        mRightButton.setGravity(Gravity.CENTER);
-        addView(mRightButton);
+        mTitleParmas = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT);
+        if(mode==0){
+            mLeftButton = new Button(mContext);
+            mRightButton = new Button(mContext);
+            mLeftButton.setText(mLeftText);
+            mLeftButton.setTextColor(mLeftTextColor);
+            mLeftButton.setBackground(mLeftBackGround);
+
+            mLeftButton.setLayoutParams(mLeftParmas);
+            mLeftButton.setGravity(Gravity.CENTER);
+            addView(mLeftButton);
+            mRightButton.setText(mRightText);
+            mRightButton.setTextColor(mRightTextColor);
+            mRightButton.setBackground(mRightBackGround);
+
+            mRightButton.setLayoutParams(mRightParmas);
+            mRightButton.setGravity(Gravity.CENTER);
+            addView(mRightButton);
+        }else {
+            mLeftImage = new ImageView(mContext);
+            mRightImage = new ImageView(mContext);
+            mLeftImage.setImageDrawable(mLeftBackGround);
+            mLeftImage.setLayoutParams(mLeftParmas);
+            addView(mLeftImage);
+            mRightImage.setImageDrawable(mRightBackGround);
+            mRightImage.setLayoutParams(mRightParmas);
+            addView(mRightImage);
+        }
+
+        mTitleTextView = new TextView(mContext);
+
 
         mTitleTextView.setText(mTitleText);
         mTitleTextView.setTextColor(mTitleTextColor);
         mTitleTextView.setTextSize(mTitleSize);
         mTitleTextView.setGravity(Gravity.CENTER);
-        mTitleParmas = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.MATCH_PARENT);
+
         mTitleTextView.setLayoutParams(mTitleParmas);
         addView(mTitleTextView);
 
-        mLeftButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mListener != null) {
-                    mListener.leftClick();
+        if(mode==0) {
+            mLeftButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.leftClick();
+                    }
                 }
-            }
-        });
-        mRightButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mListener!=null){
-                    mListener.rightClick();
+            });
+            mRightButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.rightClick();
+                    }
                 }
-            }
-        });
+            });
+        }else{
+            mLeftImage.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.leftClick();
+                    }
+                }
+            });
+            mRightImage.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.rightClick();
+                    }
+                }
+            });
+        }
     }
 
 

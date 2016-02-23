@@ -10,6 +10,6 @@
         <attr name="rightTextcolor" format="color"></attr>
         <attr name="rightBackground" format="reference|color"></attr>
         <attr name="rightText" format="string"></attr>
-
+        <attr name="topmode" format="integer"></attr>//0代表左右两边是Button,1两边为Imageview 默认0
     </declare-styleable>
 </resources>
