@@ -66,15 +66,11 @@ public class CustomTopBar extends ViewGroup {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         measureChildren(widthMeasureSpec,heightMeasureSpec);
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-
-
-
     }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
+
         int count = getChildCount();
         int cr,cb,cl,ct;
         cb = b;
