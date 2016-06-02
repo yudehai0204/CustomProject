@@ -1,37 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:topBar="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    >
+<LinearLayout
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context="com.jalen.customproject.MainActivity">
-    <com.jalen.customproject.CustomTopBar
-        android:id="@+id/topbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        topBar:titleText="测试"
-        topBar:titlesize="10sp"
-        topBar:leftText="LEFT"
-        topBar:rightText="Right"
-        topBar:titlecolor="@android:color/holo_blue_bright"
-        topBar:leftBackground="@mipmap/lucky_item_show"
-        topBar:rightBackground="@mipmap/me_feedback_advice_img"
-        topBar:topmode="1"
-        >
+    <!--<com.jalen.customproject.CustomTopBar-->
+        <!--android:id="@+id/topbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dip"-->
+        <!--topBar:titleText="测试"-->
+        <!--topBar:titlesize="10sp"-->
+        <!--topBar:leftText="LEFT"-->
+        <!--topBar:rightText="Right"-->
+        <!--topBar:titlecolor="@android:color/holo_blue_bright"-->
+        <!--topBar:leftBackground="@mipmap/lucky_item_show"-->
+        <!--topBar:rightBackground="@mipmap/me_feedback_advice_img"-->
+        <!--topBar:topmode="1"-->
+        <!-->-->
 
 
-    </com.jalen.customproject.CustomTopBar>
+    <!--</com.jalen.customproject.CustomTopBar>-->
 
-    <com.jalen.customproject.CustomTextView
-        android:text="Hello World!"
-        android:layout_width="100dip"
-        android:layout_height="50dip"
-        android:gravity="center"
+     <!--<com.jalen.customproject.CustomTextView-->
+        <!--android:text="Hello World!"-->
+        <!--android:layout_width="100dip"-->
+        <!--android:layout_height="50dip"-->
+        <!--android:gravity="center"-->
+        <!--/>-->
+    <!--<com.jalen.customproject.CustomRadian-->
+        <!--android:layout_width="200dip"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <!--<com.jalen.customproject.CustomMediaRect-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+    <!--<com.jalen.customproject.CustomViewGroup-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@android:color/black"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@android:color/holo_blue_bright"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@android:color/holo_red_dark"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@android:color/black"-->
+            <!--/>-->
+
+    <!--</com.jalen.customproject.CustomViewGroup>-->
+    <!--<com.jalen.customproject.CustomTouchView-->
+        <!--android:layout_width="30dip"-->
+        <!--android:layout_height="30dip"-->
+        <!--android:background="@android:color/black"-->
+        <!--/>-->
+    <!--<com.jalen.customproject.CustomDragHelpViewGroup-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/material_blue_grey_800"-->
+        <!--&gt;-->
+        <!--<View-->
+            <!--android:layout_width="300dip"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@android:color/black"-->
+            <!--&gt;</View>-->
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@android:color/holo_blue_light"-->
+            <!--&gt;</View>-->
+
+    <!--</com.jalen.customproject.CustomDragHelpViewGroup>-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="goTo钟表"
+        android:padding="10dp"
+        android:onClick="Zhongbiao"
         />
-    <com.jalen.customproject.CustomRadian
-        android:layout_width="200dip"
-        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="goToColorMatrix"
+        android:padding="10dp"
+        android:onClick="goColor"
+        />
 
 </LinearLayout>
+</ScrollView>
